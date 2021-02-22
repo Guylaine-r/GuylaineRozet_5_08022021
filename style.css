@@ -1,0 +1,41 @@
+/* Espacement pour mettre le footer en bas de page*/
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+.container {
+   flex : 1; 
+}
+
+/* Enlever les soulignements des liens*/
+.border-link a {
+    text-decoration:none;  
+}
+
+.image-catalogue{
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+    margin: auto;
+}
+
+.image-panier{
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+}
+
+.font-bold{
+    font-weight:bold;
+}
+
+.background-color-footer {
+    background-color: rgba(16, 13, 233, 0.5)
+}
+
+.background-color-header {
+    background-color: rgba(9, 7, 151, 0.5)
+}

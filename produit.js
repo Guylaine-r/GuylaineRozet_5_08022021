@@ -1,4 +1,4 @@
-import {fetchProductInfo} from "./backend.js";
+import {fetchProductInfo, getParameter} from "./utilities.js";
 
 // fonction fetchProductInfo (recupère les informations du produit API) => fct asynchrone (promesse)
 
@@ -52,14 +52,11 @@ function AddToCart(id) {
     }
 }
 
-
+// Fonction lancée au chargement de la page
 async function onLoad(){
-    let queryString = window.location.search;
-    let parameters = new URLSearchParams(queryString);
-    let productId = parameters.get("id");
-    
-    let productInfo = await fetchProductInfo(productId);
-    displayProduct(productInfo);
+    let productId = getParameter("id"); // On récupère le paramètre d'URL qui correspond à l'identifiant du produit de la page
+    let productInfo = await fetchProductInfo(productId); // On récupère du backend les informations de produit qui correspondent à l'ID récupéré précédemment
+    displayProduct(productInfo); // On affiche les informations de produit
 }
 
 onLoad();

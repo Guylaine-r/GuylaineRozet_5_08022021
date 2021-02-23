@@ -1,4 +1,4 @@
-import {postFormData, fetchProductInfo} from "./backend.js";
+import {postFormData, fetchProductInfo} from "./utilities.js";
 
 // fonction fetchProductInfo (recupère les informations du produit API) => fct asynchrone (promesse)
 // fonction postFormData (envoyer les données du formulaire API) =>  fct asynchrone (promesse)
@@ -44,20 +44,12 @@ function createCartProductElement(product) {
     return element;
 }
 
-// Entrée : identifiant d'un produit
-// Sortie : données complète d'un produit
-async function buildFullProductData(id) {
-    let product = await fetchProductInfo(id);
-    
-    return product;
-}
-
 // Entrée : données partielles du panier 
 // Sortie : données complètes du panier
 async function buildFullCartData(panier) {
     let fullCartData = [];
     for(let i = 0; i < panier.length; i++) {
-        fullCartData.push(await buildFullProductData(panier[i]));
+        fullCartData.push(await fetchProductInfo(panier[i]));
     }
     
     return fullCartData;
@@ -75,6 +67,7 @@ function displayCartData(fullCartData) {
         cart.appendChild(element);
     }
     
+    
     return cart;
 }
 
@@ -89,8 +82,6 @@ function displayTotal(fullCartData) {
     element.innerHTML = `
         <span class="font-bold">Total : ${(sum/100).toFixed(2)}€</span>
     `;
-    
-    return element;
 }
 
 // Sortie : Données de panier dans le localStorage
@@ -119,6 +110,7 @@ async function refresh(){
         document.getElementById("submit-button").disabled = true;
     }
 }
+
 refresh();
 
 // Ajouter évènement onclick au bouton

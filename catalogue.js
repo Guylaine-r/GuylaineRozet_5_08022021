@@ -1,4 +1,4 @@
-import {fetchProducts} from "./backend.js";
+import {fetchProducts} from "./utilities.js";
 
 // fonction fetchProducts (recupère les produits API) => fct asynchrone (promesse)
 
@@ -16,7 +16,6 @@ const buildProductElement = (product) => {
             <span class="fs-3 text-end font-bold" >${(product.price/100).toFixed(2)}€</span>
         </div>
     `;
-    
     return element;
 }
 

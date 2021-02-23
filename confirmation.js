@@ -5,8 +5,6 @@ import {getParameter} from "./utilities.js";
 function displayOrderId(orderId) {
     let element = document.getElementById("order-id");
     element.innerHTML = "Identifiant de commande : " + orderId;
-    
-    return element;
 }
 
 // Entrée : prix total
@@ -14,8 +12,6 @@ function displayOrderId(orderId) {
 function displayTotal(total) {
     let element = document.getElementById('total');
     element.innerHTML = "Prix total : " + (total/100).toFixed(2) + " €";
-    
-    return element;
 }
 
 displayTotal(getParameter("total"));

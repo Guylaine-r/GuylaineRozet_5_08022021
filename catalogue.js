@@ -1,4 +1,4 @@
-import {fetchProducts} from "./utilities.js";
+import {fetchProducts, postFormData} from "./utilities.js";
 
 // fonction fetchProducts (recupère les produits API) => fct asynchrone (promesse)
 
@@ -28,6 +28,7 @@ const displayProducts = (products) => {
     });
 }
 
+// on met ces lignes de code dans une fonction asynchrone car nous avons besoin du await
 async function onLoad() {
     let products = await fetchProducts();
     displayProducts(products);

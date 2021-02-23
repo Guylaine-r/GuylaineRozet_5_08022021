@@ -49,6 +49,5 @@ export async function postFormData(firstname, lastname, city, address, email, pr
 export function getParameter(parameterName) {
     let queryString = window.location.search; // Récupère la partie "paramètres" de l'URL
     let parameters = new URLSearchParams(queryString); // Construit un objet URLSearchParams à partir de la partie paramètre
-    console.log(parameters.get(parameterName))
     return parameters.get(parameterName); // Grâce au URLSearchParams on récupère le paramètre d'URL qui correspond au nom donné en argument
 }

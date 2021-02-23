@@ -39,8 +39,6 @@ function createCartProductElement(product) {
         </div>
     </div>
     `;
-
-    
     return element;
 }
 
@@ -51,9 +49,7 @@ async function buildFullCartData(panier) {
     for(let i = 0; i < panier.length; i++) {
         fullCartData.push(await fetchProductInfo(panier[i]));
     }
-    
     return fullCartData;
-    
 }
 
 // Entrée : données complète de panier
@@ -66,8 +62,6 @@ function displayCartData(fullCartData) {
         let element = createCartProductElement(product);
         cart.appendChild(element);
     }
-    
-    
     return cart;
 }
 
@@ -89,7 +83,6 @@ function fetchPanier() {
     if (localStorage.panier == undefined){
         return [];
     }
-
     return JSON.parse(localStorage.panier);
 }
 

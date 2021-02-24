@@ -20,6 +20,7 @@ async function sendForm (){
     response.products.forEach((element) => {
         total += element.price;
     });
+    clearCart();
     redirectToConfirmation(response.orderId, total);
 }
 

@@ -1,4 +1,4 @@
-export const SERVER = 'http://192.168.1.21:3000/api/teddies/';
+export const SERVER = 'http://localhost:3000/api/teddies/';
 
 // fichier: produit.js et panier.js
 // recupère l'information du produit

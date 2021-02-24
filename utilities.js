@@ -40,7 +40,6 @@ export async function postFormData(firstname, lastname, city, address, email, pr
     });
     
     let toJson = await response.json();
-    
     return toJson;
 }
 

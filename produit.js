@@ -58,5 +58,4 @@ async function onLoad(){
     let productInfo = await fetchProductInfo(productId); // On récupère du backend les informations de produit qui correspondent à l'ID récupéré précédemment
     displayProduct(productInfo); // On affiche les informations de produit
 }
-
 onLoad();

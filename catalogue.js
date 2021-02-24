@@ -1,7 +1,6 @@
 import {fetchProducts, postFormData} from "./utilities.js";
 
 // fonction fetchProducts (recupère les produits API) => fct asynchrone (promesse)
-
 const buildProductElement = (product) => {
     let element = document.createElement("a");
     element.classList.add("list-group-item","list-group-item-action", "d-flex","flex-row");
@@ -19,6 +18,7 @@ const buildProductElement = (product) => {
     return element;
 }
 
+//affiche dans un élément HTML (ex: id= products-list) d'autre éléments HTML (ex: product => information du produit). qui correspondent à des info de produits
 const displayProducts = (products) => {
     let list = document.getElementById("products-list");
 
@@ -29,9 +29,9 @@ const displayProducts = (products) => {
 }
 
 // on met ces lignes de code dans une fonction asynchrone car nous avons besoin du await
+// Fonction lancée au chargement de la page 
 async function onLoad() {
-    let products = await fetchProducts();
-    displayProducts(products);
+    let products = await fetchProducts(); // On récupère du backend les informations du produit
+    displayProducts(products); // On affiche les informations du produit
 }
-
 onLoad();
